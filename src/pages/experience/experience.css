@@ -1,0 +1,22 @@
+.experienceForm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.btnContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: auto;
+  width: 100%;
+}
+.experienceBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120%;
+  margin: 20px;
+}

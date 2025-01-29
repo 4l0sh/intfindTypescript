@@ -1,0 +1,446 @@
+.MainContainer {
+  display: flex;
+  width: 100%;
+  height: 95vh;
+  box-sizing: border-box;
+
+  padding: 10px;
+  flex-direction: column;
+  gap: 20px;
+}
+.HeaderContainer {
+  display: flex;
+  width: 100%;
+  height: 10%;
+  padding: 10px;
+  justify-content: space-between;
+  box-sizing: border-box;
+  align-items: center;
+  border-radius: 5px;
+  background: rgba(24, 20, 20, 0.75);
+}
+.headerTitle {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.headerButton {
+  width: 33%;
+  display: flex;
+  align-items: flex-start;
+}
+
+.logOutBtn {
+  width: 40%;
+  height: 2.5rem;
+  cursor: pointer;
+  background-color: #8d74fd;
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  font-weight: bolder;
+  font-size: large;
+  border-radius: 10px;
+  transition: 0.15s ease;
+  border: none;
+}
+.btnTxt {
+  transform: translateY(9px);
+  transition: 0.15s ease;
+}
+.logout {
+  transition: 0.15s ease;
+  transform: translateY(25px);
+}
+.logOutBtn:hover .btnTxt {
+  transform: translateY(-25px);
+  transition: 0.15s ease;
+}
+.logOutBtn:hover .logout {
+  transform: translateY(-30px);
+  transition: 0.15s ease;
+}
+.logOutBtn:hover {
+  background-color: #7a60ee;
+  box-shadow:
+    0 0 1px #7a60ee,
+    0 0 1px #7a60ee,
+    0 0 10px #7a60ee;
+}
+.GetInfo {
+  width: 33%;
+  display: flex;
+  justify-content: flex-end;
+}
+.CardsContainer {
+  display: flex;
+  width: 98%;
+  height: 75vh;
+
+  margin: 20px;
+  box-sizing: border-box;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.Card {
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  display: flex;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(24, 20, 20, 0.75);
+  border-radius: 20px;
+  width: 30%;
+  height: 100%;
+  margin: 10px;
+  transition: 0.3s ease;
+}
+.Card:hover {
+  transform: translateY(-10px);
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+.Card2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  height: 100%;
+}
+.errmsg {
+  color: red;
+  font-size: 20px;
+}
+.personalInfo {
+  display: flex;
+  width: 70%;
+  height: 90%;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  border-radius: 20px;
+}
+.skillsInfo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.skillBox {
+  display: flex;
+  flex-direction: row;
+
+  background-color: rgba(2, 2, 2, 0.37);
+  width: 90%;
+  justify-content: space-around;
+  margin: 20px;
+  border-radius: 10px;
+}
+.infoTxt {
+  display: flex;
+  color: white;
+  margin: 5px;
+  font-size: large;
+  background-color: rgba(2, 2, 2, 0.37);
+
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 0px;
+}
+.infotxt {
+  margin: 5px;
+}
+.Card3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.experienceCard {
+  display: flex;
+  width: 100%;
+  height: 35%;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+.Card3 hr {
+  width: 100%;
+}
+
+.work {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+}
+
+.referenceCard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 45%;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+}
+.referencebox {
+  display: flex;
+  background-color: rgba(2, 2, 2, 0.37);
+  border-radius: 10px;
+  width: 100%;
+  justify-content: center;
+  gap: 10px;
+}
+
+.referencebox3 {
+  height: auto;
+}
+.mainCard {
+  display: flex;
+
+  height: 100%;
+  justify-content: center;
+  align-self: center;
+  width: 100%;
+}
+.searchContainer {
+  display: flex;
+  width: 80%;
+  height: 100%;
+  padding: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background: rgba(24, 20, 20, 0.75);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+.SearchContainer {
+  display: flex;
+  width: 80%;
+  height: 100%;
+  padding: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+  box-sizing: border-box;
+  border: none;
+}
+.searchBard {
+  width: 80%;
+  height: 2.5rem;
+  margin-top: 10px;
+  background-color: rgba(2, 2, 2, 0.37);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 10px;
+}
+.searchBard:focus {
+  background-color: rgba(2, 2, 2, 0.37);
+}
+.usersList {
+  border-radius: 20px;
+  padding: 20px;
+  width: 80%;
+  height: 75%;
+  overflow: auto;
+}
+.userCard {
+  display: flex;
+  width: 100%;
+  height: 4rem;
+  margin-top: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  background-color: rgba(2, 2, 2, 0.37);
+}
+.testContainer {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid white;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 50%;
+  margin: 20px;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid red;
+}
+.user {
+  display: flex;
+  width: 100%;
+  background-color: rgba(2, 2, 2, 0.3);
+  min-height: 40%;
+  height: auto;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 15px;
+  flex-wrap: wrap;
+  overflow: hidden;
+  transition: 0.05s ease;
+}
+.user:hover {
+  transition: 0.05s ease;
+  background-color: rgba(2, 2, 2, 0.5);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+.noUsers {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+.edit {
+  width: 10%;
+  min-width: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.icon {
+  scale: 1.2;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.userAvatar {
+  width: 30%;
+  border-radius: 50%;
+  min-width: 50px;
+  cursor: pointer;
+  transition: 0.04s;
+}
+.openUserAvatar {
+  position: fixed;
+  width: 50%;
+  top: 3%;
+  border-radius: 10%;
+  cursor: pointer;
+  z-index: 1;
+  transition: 0.04s;
+}
+p {
+  font-size: large;
+}
+.editCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: fixed;
+  align-items: center;
+  background: linear-gradient(145deg, #1a1a1a, #2b2b2b);
+  border-radius: 15px;
+  box-shadow:
+    inset 0 0 5px rgba(0, 0, 0, 0.5),
+    0 10px 25px rgba(0, 0, 0, 0.6);
+  width: 45%;
+  height: 35%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+.editForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+  gap: 10px;
+  overflow: auto;
+}
+.menu {
+  display: flex;
+  width: 40%;
+  height: 2.5rem;
+  margin: 20px;
+  background: linear-gradient(145deg, #2b2b2b, #1f1f1f);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: large;
+}
+.menu:hover {
+  background: linear-gradient(145deg, #1f1f1f, #2b2b2b);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+}
+.menu option {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+  background-color: #2b2b2b;
+}
+.actions {
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+  height: 30%;
+}
+.editBtn {
+  width: 30%;
+  height: 2.5rem;
+  background: linear-gradient(145deg, #2b2b2b, #1f1f1f);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: large;
+  transition: 0.2s ease;
+}
+.editBtn:hover {
+  background: linear-gradient(145deg, #1f1f1f, #2b2b2b);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px);
+  transition: 0.2s ease;
+}
+.message {
+  margin: 0;
+  font-size: larger;
+  color: red;
+}
+.userDetail {
+  display: flex;
+  flex-direction: row;
+  width: 30%;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+}
