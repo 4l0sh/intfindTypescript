@@ -62,8 +62,7 @@ const Login = () => {
   };
   const verifyCode = (e: any) => {
     e.preventDefault();
-    console.log('generated code:', generatedCode);
-    console.log('verificationCode:', verificationCode);
+
     if (verificationCode === generatedCode) {
       console.log('code verified');
       M.toast({ html: 'Code verified', classes: 'green auth' });
