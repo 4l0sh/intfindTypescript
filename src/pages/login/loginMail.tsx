@@ -1,6 +1,7 @@
 import { Fragment, useState } from 'react';
 import emailjs from 'emailjs-com';
 import { useNavigate } from 'react-router-dom';
+import config from '../../config';
 
 const Login = () => {
   const [email, setEmail] = useState<string>('');
@@ -16,7 +17,7 @@ const Login = () => {
   };
   const sendEmail = (e: any) => {
     e.preventDefault();
-    fetch('http://localhost:4000/loginmail', {
+    fetch(`${config.apiBaseUrl}/loginmail`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

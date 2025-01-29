@@ -1,4 +1,5 @@
 import { Fragment, useState } from 'react';
+import config from '../../config';
 import './experience.css';
 const ExperienceForm = () => {
   const [inputs, setInputs] = useState<{ id: number; value: string }[]>([]);
@@ -15,7 +16,7 @@ const ExperienceForm = () => {
     setInputs((prevInputs) => [...prevInputs, { id: newId, value: '' }]);
   };
   const submitHandler = () => {
-    fetch('http://localhost:4000/experience', {
+    fetch(`${config.apiBaseUrl}/experience`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

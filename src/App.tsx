@@ -9,7 +9,6 @@ import Experience from './pages/experience/experience';
 import References from './pages/references/references';
 import ManageStudents from './pages/Student/manageStudents';
 import ShowStudent from './pages/Student/showStudent';
-import Test from './pages/skills/test';
 import './pages/signup/signup.css';
 function App() {
   return (
@@ -25,7 +24,6 @@ function App() {
           <Route path='/references' element={<References />} />
           <Route path='/manageStudents' element={<ManageStudents />} />
           <Route path='/showStudent' element={<ShowStudent />} />
-          <Route path='/test' element={<Test />} />
         </Routes>
       </Router>
     </Fragment>

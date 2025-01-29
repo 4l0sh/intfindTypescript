@@ -1,4 +1,5 @@
 import { Fragment, useState, useEffect } from 'react';
+import config from '../../config';
 import './manageStudents.css';
 
 type User = {
@@ -16,7 +17,7 @@ const StudentCard = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [message, setMessage] = useState('');
   useEffect(() => {
-    fetch('http://localhost:4000/users', {
+    fetch(`${config.apiBaseUrl}/users`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -43,7 +44,7 @@ const StudentCard = () => {
     user.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
   const deleteUser = (id: string) => {
-    fetch(`http://localhost:4000/users/${id}`, {
+    fetch(`${config.apiBaseUrl}/users/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -73,7 +74,7 @@ const StudentCard = () => {
       setMessage('Please select a role before updating');
       return;
     }
-    fetch(`http://localhost:4000/users/${id}`, {
+    fetch(`${config.apiBaseUrl}/users/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

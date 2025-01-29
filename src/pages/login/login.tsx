@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import config from '../../config';
 const Login = () => {
   const [message, setMessage] = useState<string>('');
   const [email, setEmail] = useState<string>('');
@@ -9,7 +9,7 @@ const Login = () => {
 
   const login = (e: any) => {
     e.preventDefault();
-    fetch('http://localhost:4000/login', {
+    fetch(`${config.apiBaseUrl}/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

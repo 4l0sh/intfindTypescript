@@ -1,56 +1,35 @@
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import config from '../../config';
+
+interface Skill {
+  skill: string;
+  value: number;
+}
 
 const Skills: React.FC = () => {
   const navigate = useNavigate();
+  const [skills, setSkills] = useState<Skill[]>([
+    { skill: '', value: 1 },
+    { skill: '', value: 1 },
+    { skill: '', value: 1 },
+    { skill: '', value: 1 },
+  ]);
 
-  const redirectToSignup = () => {
-    navigate('/');
-  };
-  const redirectToStudy = () => {
-    navigate('/study');
-  };
+  const redirectToSignup = () => navigate('/');
+  const redirectToStudy = () => navigate('/study');
+
   const submitHandler = (e: any) => {
     e.preventDefault();
-    const skill1 = (document.getElementById('skill1') as HTMLInputElement)
-      .value;
-    const skill1value = (
-      document.getElementById('skill1value') as HTMLInputElement
-    ).value;
-    const skill2 = (document.getElementById('skill2') as HTMLInputElement)
-      .value;
-    const skill2value = (
-      document.getElementById('skill2value') as HTMLInputElement
-    ).value;
-    const skill3 = (document.getElementById('skill3') as HTMLInputElement)
-      .value;
-    const skill3value = (
-      document.getElementById('skill3value') as HTMLInputElement
-    ).value;
-    const skill4 = (document.getElementById('skill4') as HTMLInputElement)
-      .value;
-    const skill4value = (
-      document.getElementById('skill4value') as HTMLInputElement
-    ).value;
-    const skills = {
-      skill1,
-      skill1value,
-      skill2,
-      skill2value,
-      skill3,
-      skill3value,
-      skill4,
-      skill4value,
-    };
-    fetch('http://localhost:4000/skills', {
+
+    fetch(`${config.apiBaseUrl}/skills`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         _id: sessionStorage.getItem('userId') || '',
-        Authorization: 'Bearer ' + sessionStorage.getItem('jwt') || '',
+        Authorization: 'Bearer ' + (sessionStorage.getItem('jwt') || ''),
       },
-      body: JSON.stringify({
-        skills,
-      }),
+      body: JSON.stringify({ skills }),
     })
       .then((res) => {
         if (res.status === 200) {
@@ -67,11 +46,25 @@ const Skills: React.FC = () => {
         M.toast({ html: 'Skills Failed', classes: 'red toast' });
       });
   };
+
+  const handleSkillChange = (index: number, value: string) => {
+    setSkills((prevSkills) =>
+      prevSkills.map((skill, i) =>
+        i === index ? { ...skill, skill: value } : skill
+      )
+    );
+  };
+
+  const handleValueChange = (index: number, value: number) => {
+    setSkills((prevSkills) =>
+      prevSkills.map((skill, i) => (i === index ? { ...skill, value } : skill))
+    );
+  };
+
   return (
     <div>
       <div className='mainContainer'>
         <div className='box1'>
-          {' '}
           <i
             onClick={redirectToSignup}
             className='fa-solid fa-arrow-left arrow-right'
@@ -81,71 +74,27 @@ const Skills: React.FC = () => {
           <div className='signupForm'>
             <h1 className='signupTitle'>Skills</h1>
             <form className='signupForm'>
-              <div className='skillInput'>
-                {' '}
-                <input
-                  id='skill1'
-                  className='signupInput'
-                  type='text'
-                  placeholder='Skill 1'
-                />
-                <input
-                  type='range'
-                  className='range'
-                  max='5'
-                  min='1'
-                  id='skill1value'
-                />
-              </div>
-              <div className='skillInput'>
-                {' '}
-                <input
-                  id='skill2'
-                  className='signupInput'
-                  type='email'
-                  placeholder='Skill 2'
-                />
-                <input
-                  type='range'
-                  className='range'
-                  max='5'
-                  min='1'
-                  id='skill2value'
-                />
-              </div>
-              <div className='skillInput'>
-                {' '}
-                <input
-                  id='skill3'
-                  className='signupInput'
-                  type='text'
-                  placeholder='Skill 3'
-                />
-                <input
-                  type='range'
-                  className='range'
-                  max='5'
-                  min='1'
-                  id='skill3value'
-                />
-              </div>
-              <div className='skillInput'>
-                <input
-                  id='skill4'
-                  className='signupInput'
-                  type='text'
-                  placeholder='Skill 4'
-                />
-                <input
-                  type='range'
-                  className='range'
-                  max='5'
-                  min='1'
-                  name=''
-                  id='skill4value'
-                />
-              </div>
-
+              {skills.map((skill, index) => (
+                <div key={index} className='skillInput'>
+                  <input
+                    className='signupInput'
+                    type='text'
+                    placeholder={`Skill ${index + 1}`}
+                    value={skill.skill}
+                    onChange={(e) => handleSkillChange(index, e.target.value)}
+                  />
+                  <input
+                    type='range'
+                    className='range'
+                    max='5'
+                    min='1'
+                    value={skill.value}
+                    onChange={(e) =>
+                      handleValueChange(index, Number(e.target.value))
+                    }
+                  />
+                </div>
+              ))}
               <input
                 className='signupSubmit'
                 type='submit'
@@ -156,7 +105,6 @@ const Skills: React.FC = () => {
           </div>
         </div>
         <div className='box3'>
-          {' '}
           <i
             onClick={redirectToStudy}
             className='fa-solid fa-arrow-right arrow-right'

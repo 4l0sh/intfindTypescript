@@ -1,5 +1,6 @@
 import { Fragment, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import config from '../../config';
 import './study.css';
 
 const Study: React.FC = () => {
@@ -16,7 +17,7 @@ const Study: React.FC = () => {
   };
   const submitHandler = (e: any) => {
     e.preventDefault();
-    fetch('http://localhost:4000/study', {
+    fetch(`${config.apiBaseUrl}/study`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

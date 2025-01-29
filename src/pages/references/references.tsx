@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import config from '../../config';
 const References: React.FC = () => {
   const navigate = useNavigate();
   const [name, setName] = useState<string>('');
@@ -14,7 +14,7 @@ const References: React.FC = () => {
   };
   const submitHandler = (e: any) => {
     e.preventDefault();
-    fetch('http://localhost:4000/references', {
+    fetch(`${config.apiBaseUrl}/references`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -1,6 +1,7 @@
 import { Fragment, useState } from 'react';
 import M from 'materialize-css';
 import { useNavigate } from 'react-router-dom';
+import config from '../../config';
 import './signup.css';
 const Signup = () => {
   const navigate = useNavigate();
@@ -29,7 +30,7 @@ const Signup = () => {
       return;
     }
 
-    fetch('http://localhost:4000/signup', {
+    fetch(`${config.apiBaseUrl}/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

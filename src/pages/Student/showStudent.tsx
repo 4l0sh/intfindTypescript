@@ -1,5 +1,6 @@
 import { Fragment, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import config from '../../config';
 import './manageStudents.css';
 
 interface Experience {
@@ -41,7 +42,7 @@ const ShowStudents: React.FC = () => {
   const userId = sessionStorage.getItem('userId') || '';
 
   const getStudentInfo = () => {
-    fetch(`http://localhost:4000/studentInfo/${userId}`, {
+    fetch(`${config.apiBaseUrl}/studentInfo/${userId}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
