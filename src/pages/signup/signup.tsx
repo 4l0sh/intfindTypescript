@@ -150,7 +150,11 @@ const Signup = () => {
                 value='Sign Up'
               />{' '}
               <p>
-                Already have an account? <a href='/loginMail'> Log in </a>
+                Already have an account?{' '}
+                <a href='https://intfindfrontend.onrender.com/loginMail'>
+                  {' '}
+                  Log in{' '}
+                </a>
               </p>
             </form>
           </div>

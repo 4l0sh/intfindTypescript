@@ -127,7 +127,10 @@ const Login = () => {
               </form>
               <p>
                 Log in using your Password{' '}
-                <a href='/login' className='link'>
+                <a
+                  href='https://intfindfrontend.onrender.com/login'
+                  className='link'
+                >
                   Here
                 </a>
               </p>
