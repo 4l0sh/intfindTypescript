@@ -1,8 +1,9 @@
 const express = require('express');
+require('dotenv').config();
 const { ObjectId } = require('mongodb');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
-const JWT_SECRET = 'secretNumberOne';
+const JWT_SECRET = process.env.JWT_SECRET;
 const bcrypt = require('bcryptjs');
 
 module.exports = (db) => {
