@@ -24,7 +24,6 @@ const Login = () => {
           sessionStorage.setItem('jwt', result.token);
           sessionStorage.setItem('userId', result.userId);
           sessionStorage.setItem('role', result.role);
-          console.log('role', result.role);
           M.toast({ html: 'Logged in successfully', classes: 'green auth' });
           if (result.role === 'admin') {
             navigate('/manageStudents');
