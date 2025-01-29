@@ -450,14 +450,37 @@ p {
   .personalInfo {
     overflow: auto;
   }
+  .searchContainer {
+    width: 120%;
+  }
+  .user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .userDetail {
+    width: 100%;
+    justify-content: center;
+  }
   .logOutBtn {
     width: 80%;
+  }
+  p {
+    font-size: 16px;
+  }
+  .icon {
+    margin-right: 20px;
   }
   .headerTitle {
     width: 30%;
     font-size: 25px;
   }
-  .CardsContainer {
+  .editCard {
+    width: 80%;
+    height: 60%;
+  }
+  .edit .CardsContainer {
     flex-direction: column;
     align-items: center;
   }
