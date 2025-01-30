@@ -244,10 +244,15 @@ a {
 @media (max-width: 600px) {
   .mainContainer {
     flex-direction: column;
+    display: flex;
+    justify-content: center;
     height: 100%;
     padding: 10px;
   }
 
+  .Card {
+    transform: translateX(-15px);
+  }
   .signupCard {
     width: 100%;
     margin: 0;
