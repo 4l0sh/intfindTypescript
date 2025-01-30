@@ -12,6 +12,9 @@ const Signup = () => {
   const navigateToSkills = () => {
     navigate('/skills');
   };
+  const navigateToLogin = () => {
+    navigate('/loginMail');
+  };
 
   const submitHandler = (e: any) => {
     e.preventDefault();
@@ -151,10 +154,10 @@ const Signup = () => {
               />{' '}
               <p>
                 Already have an account?{' '}
-                <a href='https://intfindfrontend.onrender.com/loginMail'>
+                <p onClick={navigateToLogin} className='loginLink'>
                   {' '}
                   Log in{' '}
-                </a>
+                </p>
               </p>
             </form>
           </div>

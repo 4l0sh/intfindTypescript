@@ -61,6 +61,26 @@ a {
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+.loginLink {
+  margin-top: 4px;
+  color: #8d74fd;
+  cursor: pointer;
+  position: relative;
+  width: auto;
+}
+.loginLink::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  background-color: #8d74fd;
+  height: 2px;
+  width: 0;
+}
+.loginLink:hover::after {
+  width: 22%;
+  transition: width 0.3s;
+}
 .box1,
 .box3 {
   height: 40%;

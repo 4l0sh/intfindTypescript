@@ -78,6 +78,9 @@ const Login = () => {
       M.toast({ html: 'Code not verified', classes: 'red auth' });
     }
   };
+  const navigateToLogin = () => {
+    navigate('/login');
+  };
   return (
     <Fragment>
       <div className='mainContainer'>
@@ -127,12 +130,9 @@ const Login = () => {
               </form>
               <p>
                 Log in using your Password{' '}
-                <a
-                  href='https://intfindfrontend.onrender.com/login'
-                  className='link'
-                >
+                <p onClick={navigateToLogin} className='loginLink'>
                   Here
-                </a>
+                </p>
               </p>
             </div>
           </div>
