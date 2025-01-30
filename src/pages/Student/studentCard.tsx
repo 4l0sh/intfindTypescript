@@ -154,7 +154,7 @@ const StudentCard = () => {
           </div>{' '}
           {isEditing ? (
             <div className='editCard'>
-              <h2>Edit User</h2>
+              <h2 className='editTxt'>Edit User</h2>
               <p className='message'> {message}</p>
               <form className='editForm'>
                 <select
